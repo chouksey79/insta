@@ -1,0 +1,553 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #fafafa;
+  color: #262626;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-bottom: 1px solid #dbdbdb;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .card {
+    margin-bottom: 16px;
+  }
+
+  .card-header {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .card-body {
+    padding: 12px;
+  }
+
+  .input {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 8px;
+  }
+
+  .card-header {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .card-body {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  h3 {
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .login-container {
+    padding: 20px !important;
+  }
+
+  .login-form {
+    padding: 30px 20px 20px !important;
+  }
+
+  .login-form h1 {
+    font-size: 36px !important;
+    margin-bottom: 20px !important;
+  }
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+
+.btn-primary {
+  background-color: #0095f6;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #1877f2;
+}
+
+.btn-secondary {
+  background-color: #efefef;
+  color: #262626;
+}
+
+.btn-secondary:hover {
+  background-color: #dbdbdb;
+}
+
+.btn-danger {
+  background-color: #ed4956;
+  color: white;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #a8a8a8;
+}
+
+.card {
+  background: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+.card-header {
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #efefef;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.card-footer {
+  padding: 10px 16px;
+  border-top: 1px solid #efefef;
+}
+
+.link {
+  color: #0095f6;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.error {
+  color: #ed4956;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* Enhanced Login Page Styles */
+.login-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-container-wrapper {
+  display: flex;
+  max-width: 935px;
+  width: 100%;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Left Side - Phone Mockup */
+.login-image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.phone-mockup {
+  position: relative;
+  width: 380px;
+  height: 580px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50px;
+  padding: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  border-radius: 40px;
+  overflow: hidden;
+  position: relative;
+  border: 3px solid #333;
+}
+
+.instagram-screenshots {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.screenshot {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: slideShow 9s infinite;
+}
+
+.screenshot.slide-1 {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  animation-delay: 0s;
+}
+
+.screenshot.slide-2 {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  animation-delay: 3s;
+}
+
+.screenshot.slide-3 {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  animation-delay: 6s;
+}
+
+@keyframes slideShow {
+  0%, 30% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  33%, 100% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}
+
+/* Right Side - Form Section */
+.login-form-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 350px;
+}
+
+.login-form-container {
+  width: 100%;
+  max-width: 350px;
+}
+
+.login-card {
+  background: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 1px;
+  padding: 40px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.0975);
+}
+
+.login-form {
+  text-align: center;
+}
+
+.instagram-logo {
+  font-family: 'Billabong', 'Brush Script MT', cursive;
+  font-size: 51px;
+  font-weight: 400;
+  margin-bottom: 12px;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+  user-select: none;
+}
+
+.login-subtitle {
+  color: #8e8e8e;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0 40px 20px;
+  text-align: center;
+}
+
+.auth-form {
+  margin-top: 24px;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 9px 0 7px 8px;
+  background: #fafafa;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  font-size: 14px;
+  margin-bottom: 6px;
+  transition: border-color 0.2s;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: #a8a8a8;
+  background: #fff;
+}
+
+.auth-input::placeholder {
+  color: #8e8e8e;
+}
+
+.auth-error {
+  margin: 10px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #ed4956;
+}
+
+.auth-button {
+  width: 100%;
+  padding: 5px 9px;
+  background: #0095f6;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.auth-button:hover:not(:disabled) {
+  background: #1877f2;
+}
+
+.auth-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 18px 0;
+  color: #8e8e8e;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #dbdbdb;
+}
+
+.divider span {
+  padding: 0 18px;
+}
+
+.social-login {
+  margin: 8px 0;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 5px 9px;
+  background: transparent;
+  border: none;
+  color: #385185;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.social-button:hover {
+  opacity: 0.7;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.forgot-password {
+  margin-top: 12px;
+}
+
+.forgot-link {
+  color: #00376b;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.signup-card {
+  background: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 1px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.0975);
+}
+
+.signup-prompt {
+  font-size: 14px;
+  color: #262626;
+}
+
+.signup-link {
+  color: #0095f6;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+.app-download {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.app-download p {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #262626;
+}
+
+.app-badges {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.app-badge {
+  height: 40px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.app-badge:hover {
+  opacity: 0.7;
+}
+
+.app-badge svg {
+  height: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 875px) {
+  .login-image-section {
+    display: none;
+  }
+
+  .login-container-wrapper {
+    gap: 0;
+  }
+
+  .login-form-section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-page {
+    background: #fafafa;
+    padding: 0;
+  }
+
+  .login-card {
+    border: none;
+    padding: 20px;
+    box-shadow: none;
+  }
+
+  .signup-card {
+    border: none;
+    box-shadow: none;
+  }
+
+  .instagram-logo {
+    font-size: 40px;
+  }
+
+  .login-subtitle {
+    margin: 0 20px 20px;
+    font-size: 15px;
+  }
+}
